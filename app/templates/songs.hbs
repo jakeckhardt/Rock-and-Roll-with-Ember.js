@@ -1,0 +1,41 @@
+<ul class="list pl3">
+  {{#each this.model as |song|}}
+    <li class="rr-list-item" data-test-rr="song-list-item">
+      {{song.title}} by <em>{{song.band}}</em>
+      <span class="rr-rating fr">{{song.rating}}</span>
+    </li>
+  {{/each}}
+</ul>
+<div class="rr-new-label">
+  {{#if this.isAddingSong}}
+    <form class="rr-inline-form" {{on "submit" this.saveSong}} data-test-rr="new-song-form">
+      <Input
+        @type="text"
+        @value={{this.newSongTitle}}
+        class="rr-input"
+        placeholder="New song"
+        data-test-rr="new-song-input"
+      />
+      <div class="rr-inline-form-group ml2">
+        <button
+          type="submit"
+          class="rr-action-button"
+          disabled={{this.isAddButtonDisabled}}
+          data-test-rr="new-song-button"
+        >
+          Add
+        </button>
+        <button
+          class="rr-cancel-icon"
+          {{on "click" this.cancelAddSong}}
+        >
+          {{fa-icon "times"}}
+        </button>
+      </div>
+    </form>
+  {{else}}
+    <label {{on "click" this.addSong}} data-test-rr="new-song-label">
+    {{!-- (...) --}}
+    </label>
+  {{/if}}
+</div>

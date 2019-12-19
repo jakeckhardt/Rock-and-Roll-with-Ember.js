@@ -1,0 +1,11 @@
+<ul class="rr-list">
+  {{#each this.model.friends as |friend|}}
+    <li class="rr-list-item">
+      {{friend.name}}
+    </li>
+  {{else}}
+    <li class="tc">
+      No {{this.model.name}} songs yet.
+    </li>
+  {{/each}}
+</ul>
