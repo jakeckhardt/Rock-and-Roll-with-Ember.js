@@ -3,7 +3,6 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import EmberObject from '@ember/object';
-import { pauseTest } from '@ember/test-helpers';
 
 module('Integration | Component | star-rating', function(hooks) {
   setupRenderingTest(hooks);
@@ -31,17 +30,15 @@ module('Integration | Component | star-rating', function(hooks) {
   });
 
   test('The setRating action', async function(assert) {
-    await pauseTest();
     this.set('song', EmberObject.create({ rating: 3 }));
     this.set('actions', {
       updateRating(song, rating) {
         song.set('rating', rating);
       }
     });
-    
-    await render(hbs`<StarRating @rating={{song.rating}} @onClick={{fn this.updateRating song}} />`);
-    await click('[data-test-star-rating-5"]');
+
+    await render(hbs`<StarRating @rating={{song.rating}} @onClick={{fn this.actions.updateRating song}} />`);
+    await click('[data-test-star-rating]:nth-of-type(5)');
     assert.equal(this.get('song.rating'), 5, "The clicked star's rating is correctly sent");
-    
   });
 });
