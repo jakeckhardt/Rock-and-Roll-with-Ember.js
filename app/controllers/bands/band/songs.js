@@ -6,7 +6,7 @@ export default Controller.extend({
     isAddingSong: false,
     newSongName: '',
 
-    isAddButtonDisablerd: empty('newSongName'),
+    isAddButtonDisabled: empty('newSongName'),
 
     addSong: action(function() {
         this.set('isAddingSong', true);
