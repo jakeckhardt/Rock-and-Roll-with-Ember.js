@@ -1,6 +1,6 @@
 <ul class="list pl3">
   {{#each this.model as |song|}}
-    <li class="rr-list-item" data-test-rr="song-list-item">
+    <li class="rr-list-item" data-test-song-list-item>
       {{song.title}} by <em>{{song.band}}</em>
       <span class="rr-rating fr">{{song.rating}}</span>
     </li>
@@ -35,7 +35,7 @@
     </form>
   {{else}}
     <label {{on "click" this.addSong}} data-test-rr="new-song-label">
-    {{!-- (...) --}}
+      {{!-- (...) --}}
     </label>
   {{/if}}
 </div>
