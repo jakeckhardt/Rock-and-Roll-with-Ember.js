@@ -39,7 +39,7 @@
 <ul class="rr-list" data-test-songs>
   {{#each this.sortedSongs as |song|}}
     <li class="rr-list-item" data-test-song-list-item>
-      {{song.title}} 
+      {{capitalize song.title}} 
       <StarRating 
         class="fr" 
         @rating={{song.rating}} 
@@ -48,7 +48,7 @@
     </li>
   {{else}}
     <li class="tc">
-      No {{this.model.name}} songs yet.
+      No {{capitalize this.model.name}} songs yet.
     </li>
   {{/each}}
   <div class="rr-new-label">
@@ -58,7 +58,7 @@
           @type="text"
           @value={{this.newSongName}}
           class="rr-input"
-          placeholder="New song"
+          placeholder={{this.newSongTitle}}
           data-test-rr="new-song-input"
         />
         <button
