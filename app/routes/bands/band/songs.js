@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { reject } from 'rsvp';
+import { reject } from 'rsvp'; // eslint-disable-line no-unused-vars
 
 export default Route.extend({
   model() {
