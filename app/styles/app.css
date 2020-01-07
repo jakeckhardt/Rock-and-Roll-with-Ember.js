@@ -164,3 +164,34 @@ a {
   margin-left: -5px;
   border-width: 0;
 }
+
+:root {
+  /* (...) */
+  --light-red: #ff725c;
+  /* (...) */
+  --error-color: var(--light-red);
+}
+
+.rr-loading-pane {
+  margin: 25px auto;
+}
+
+.rr-loading-message {
+  text-align: center;
+}
+
+.rr-spinner {
+  background: url('/images/spinner.svg') no-repeat;
+  height: 31px;
+  width: 31px;
+  margin: 0 auto;
+}
+
+.rr-error-pane {
+  margin: 25px auto;
+}
+
+.rr-error-message {
+  text-align: center;
+  color: var(--error-color);
+}
