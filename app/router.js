@@ -56,4 +56,6 @@ Router.map(function() {
       this.route('friends');
     });
   });
+  this.route('sign-up');
+  this.route('login');
 });
